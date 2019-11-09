@@ -38,13 +38,6 @@
         {% endfor %}
     </ul>
 
-    <form action="/" method="POST">
-        Ingrese nombre: 
-        <input type="text" name="nombre" value="{{nombre}}" />
-        <input type="submit" value="Filtrar">
-        {% csrf_token %}
-    </form>
-
 </body>
 
 </html>
