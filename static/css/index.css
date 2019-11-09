@@ -1,0 +1,131 @@
+body{
+    background: rgb(230, 230, 110);
+}
+.container{
+	display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
+.container>* {
+    padding: 10px;
+    flex: 1 100%;
+}
+.logo{
+	align-content: center;
+}
+
+.header {
+    float: center;
+    display: flex;
+}
+
+.navegacion {    
+    border-left-color: rgba(95, 223, 95, 0.774);
+    float: left;
+    width: 30%,
+
+}
+.lateral_izq {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.lateral_der {
+    width: 48%;
+    float: right;
+}
+
+#comida {
+    width: 70%;
+    height: auto;
+}
+
+.footer {
+    display: left;
+    align-content: center;
+	background-color: #000;
+}
+
+.social {
+	position: fixed;
+    left: 0;
+	top: 200px; 
+	z-index: 2000; 
+}
+ 
+	.social ul {
+		list-style: none;
+	}
+ 
+	.social ul li a {
+		display: inline-block;
+		color:#fff;
+		background: #000;
+		padding: 10px 15px;
+		text-decoration: none;
+		-webkit-transition:all 500ms ease;
+		-o-transition:all 500ms ease;
+		transition:all 500ms ease; 
+	}
+ 
+	.social ul li .icon-facebook {background:#3b5998;} 
+	.social ul li .icon-twitter {background: #00abf0;}
+	.social ul li .icon-googleplus {background: #d95232;}
+	.social ul li .icon-instagram{ background: #ff3507;}
+	.social ul li a:hover {
+		background: #000;
+		padding: 10px 30px; 
+	}
+	
+.pedir {
+	position: fixed;
+	right: 0;
+	top: 200px; 
+	z-index: 2000; 
+}
+	 
+	.pedir ul {
+		list-style: none;
+	}
+	 
+	.pedir ul li a {
+		display: inline-block;
+		color:#fff;
+		background: #000;
+		padding: 10px 15px;
+		text-decoration: none;
+		-webkit-transition:all 500ms ease;
+		-o-transition:all 500ms ease;
+		transition:all 500ms ease; 
+	}
+	 
+	.social ul li .icon-pedir {background:green;} 
+	.social ul li a:hover {
+		background: #000;
+		padding: 10px 30px; 
+	}
+.aside {
+	float: left;
+	width: 40%;
+	padding: 0px;
+}
+
+@media screen and (max-width: 992px) {
+	.aside {
+	    width: 50%;
+	}
+}
+	
+	/* pantalla grandes */
+	@media screen and (max-width: 800px) {
+		.aside {
+		    width: 100%;
+			align-content: flex-start;
+		}
+		.aside-2{
+			margin: auto;
+			display: inline-flex;
+		}
+	}
