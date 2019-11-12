@@ -22,24 +22,9 @@ def locales(request):
 def quienes_somos(request):
     return render(request, 'app/quienes_somos.html', {})
 
-def agregar_cliente(request):
-    if request.method == "POST":
-        form = ClienteForm(request.POST)
-        if form.is_valid():
-            model_instance = form.save(commit=False)
-            model_instance.save()
-            return redirect('/agregarCliente')
-    else:
-        form = ClienteForm()
-        return render(request, 'app/agregar_cliente.html',
-                      {'form': form})
-
 def listar_clientes(request):
-    # creamos una colección la cual carga TODOS los registos
-    clientes = Cliente.objects.all()
-    # renderizamos la colección en el template
-    return render(request,
-        "app/listar_clientes.html", {'clientes': clientes})
+    clientes = Cliente.objects.filter(nombre__contains='')
+    return render(request, "app/listar_clientes.html", {'clientes': clientes})
 
 def editar_cliente(request, cliente_id):
     # Recuperamos el registro de la base de datos por el id
@@ -63,7 +48,6 @@ def borrar_cliente(request, cliente_id):
     instacia.delete()
     return redirect('/')
 
-# .... Otra forma usando Generics
 class Cliente_Create(CreateView):
     model = Cliente
     form_class = ClienteForm
