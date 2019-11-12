@@ -7,8 +7,14 @@ from .models import Cliente
 
 from .forms import ClienteForm
 
-def index(request):
-    return render(request, 'app/index.html', {})
+def menu(request):
+    return render(request, 'app/menu.html', {})
+
+def login(request):
+    return render(request, 'app/login.html', {})
+
+def ingresar(request):
+    return render(request, 'app/login.html', {})
 
 def locales(request):
     return render(request, 'app/locales.html', {})
