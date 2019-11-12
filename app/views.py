@@ -29,8 +29,11 @@ def agregar_cliente(request):
                       {'form': form})
 
 def listar_clientes(request):
-    clientes = Cliente.objects.filter(nombre__contains='')
-    return render(request, "app/listar_clientes.html", {'clientes': clientes})
+    # creamos una colección la cual carga TODOS los registos
+    clientes = Cliente.objects.all()
+    # renderizamos la colección en el template
+    return render(request,
+        "app/listar_clientes.html", {'clientes': clientes})
 
 def editar_cliente(request, cliente_id):
     # Recuperamos el registro de la base de datos por el id

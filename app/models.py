@@ -2,14 +2,50 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+
+
 class Pedido(models.Model):
     n_boleta = models.IntegerField()
-    nombre = models.CharField(max_length=30)
-    fecha = models.DateTimeField(auto_now=True)
-    hora = models.DateTimeField(default=timezone.now)
-    detalle = models.CharField(max_length=50)
-    cantidad = models.IntegerField()
-    precio = models.IntegerField()
+    nombre = models.CharField(max_length=30,null=True)
+    fecha = models.DateTimeField(auto_now=True,null=True)
+    hora = models.DateTimeField(default=timezone.now,null=True)
+    PIZZA = (
+        ('SuperPeperonni','SuperPeperonni'),
+        ('CarnesMix','CarnesMix'),
+        ('Italiana','Italiana'),
+        ('Española','Española'),
+        ('Napolitana','Napolitana'),
+        ('Vegetariana','Vegetariana'),
+        ('Hawaiana','Hawaiana'),
+    )
+    tipo_pizza = models.CharField(max_length=50,choices=PIZZA,null=True)
+    TAMAÑO = (
+        ('Individual','Individual'),
+        ('Mediana','Mediana'),
+        ('Grande','Grande'),
+        ('XL','XL'),
+    )
+    tamaño = models.CharField(max_length=50,choices=TAMAÑO,null=True)
+    CANTIDAD_PIZZA = (
+        ('1','1'),
+        ('2','2'),
+        ('3','3'),
+    )
+    cantidad_pizza = models.CharField(max_length=50,choices=CANTIDAD_PIZZA,null=True)
+    ACOMPAÑAMIENTO = (
+        ('PalitosQueso','PalitosQueso'),
+        ('PalitosAjo','PalitosAjo'),
+        ('PalitosCanela','PalitosCanela'),
+    )
+    acompañamiento = models.CharField(max_length=50,choices=ACOMPAÑAMIENTO,null=True)
+    CANTIDAD_ACOMPAÑAMIENTO = (
+        ('1','1'),
+        ('2','2'),
+        ('3','3'),
+    )
+    cantidad_acompañamiento = models.CharField(max_length=50,choices=CANTIDAD_ACOMPAÑAMIENTO,null=True)
+    
+    precio_final = models.IntegerField()
 
     def __str__(self):
         return self.nombre
@@ -17,7 +53,7 @@ class Pedido(models.Model):
 class Cliente(models.Model):
     nombre = models.CharField(max_length=30)
     rut = models.CharField(max_length=12)
-    email = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
     celular = models.CharField(max_length=12)
     contraseña = models.CharField(max_length=20)
 
