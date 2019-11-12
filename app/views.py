@@ -7,6 +7,9 @@ from .models import Cliente
 
 from .forms import ClienteForm
 
+def index(request):
+    return render(request, 'app/index.html', {})
+
 def menu(request):
     return render(request, 'app/menu.html', {})
 
