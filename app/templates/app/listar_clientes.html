@@ -36,6 +36,12 @@
         <li>
             Contraseña:
             {{ c.contraseña}}
+            <br>
+            <a href="/editar_cliente/{{ c.id }}"> Editar</a>
+            <br>
+            <a href="/borrar_cliente/{{ c.id }}"
+            onclick="return confirm('¿Esta seguro de borrar?');"
+            > Borrar</a>
         </li>
         {% endfor %}
     </ul>
