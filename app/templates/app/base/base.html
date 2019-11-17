@@ -30,6 +30,7 @@
         <div class="navegacion">
             </div>
                 <ul class="nav justify-content-center">
+                    
                     <li class="nav-item">
                         <a class="nav-link active" href="menu">Menú</a>
                     </li>
@@ -42,6 +43,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="agregar_cliente">Registro</a>
                     </li>
+                    <h5> Hola {{ request.user }} !!</h5>
                 </ul>  
             </div>
         </div>
@@ -116,7 +118,7 @@
     {% block social %}
     <div class="social">
 		<ul>
-            <li><a href="login" target="_blank" class="icon-pedir">Ingresar</a></li>
+            <li><a href="http://localhost:8000/admin/login/?next=/admin/" target="_blank" class="icon-pedir">Ingresar</a></li>
 			<li><a href="http://www.facebook.com" target="_blank" class="icon-facebook">facebook</a></li>
 			<li><a href="http://www.twitter.com" target="_blank" class="icon-twitter">twitter</a></li>
             <li><a href="http://www.googleplus.com" target="_blank" class="icon-googleplus">google</a></li>

@@ -65,7 +65,7 @@ body{
 .social {
 	position: fixed;
     left: 0;
-	top: 200px; 
+	top: 100px; 
 	z-index: 2000; 
 }
  
@@ -93,33 +93,6 @@ body{
 		padding: 10px 30px; 
 	}
 	
-.pedir {
-	position: fixed;
-	right: 0;
-	top: 200px; 
-	z-index: 2000; 
-}
-	 
-	.pedir ul {
-		list-style: none;
-	}
-	 
-	.pedir ul li a {
-		display: inline-block;
-		color:#fff;
-		background: #000;
-		padding: 10px 15px;
-		text-decoration: none;
-		-webkit-transition:all 500ms ease;
-		-o-transition:all 500ms ease;
-		transition:all 500ms ease; 
-	}
-	 
-	.social ul li .icon-pedir {background:green;} 
-	.social ul li a:hover {
-		background: #000;
-		padding: 10px 30px; 
-	}
 .aside {
 	float: left;
 	width: 40%;

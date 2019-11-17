@@ -7,14 +7,17 @@ from .models import Cliente
 
 from .forms import ClienteForm
 
-def index(request):
-    return render(request, 'app/index.html', {})
-
+def cliente_list(request):
+    user = request.user
+    if user.has_perm('app.administrador'):
+        clientes = Cliente.objects.filter(
+            published_date__lte=timezone.now()).order_by('published_date')
+        return render(request,'app/listar_clientes.html', {'clientes': clientes})
+    else:
+        return render(request,'app/menu.html')
+        
 def menu(request):
     return render(request, 'app/menu.html', {})
-
-def login(request):
-    return render(request, 'app/login.html', {})
 
 def ingresar(request):
     return render(request, 'app/login.html', {})
