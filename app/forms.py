@@ -1,8 +1,12 @@
 from django import forms
-from .models import Cliente
+from .models import *
 
 class ClienteForm(forms.ModelForm):
-    contraseña = forms.CharField(widget=forms.PasswordInput)
+    attrs = {
+        "type": "password"
+    }
+    contraseña = forms.CharField(widget=forms.TextInput(attrs=attrs))
+
     class Meta:
         model= Cliente
         fields= ['nombre', 'rut', 'email', 'celular', 'contraseña']

@@ -30,26 +30,19 @@ def listar_clientes(request):
     return render(request, "app/listar_clientes.html", {'clientes': clientes})
 
 def editar_cliente(request, cliente_id):
-    # Recuperamos el registro de la base de datos por el id
     instancia= Cliente.objects.get(id=cliente_id)
-    # creamos un formulario con los datos del objeto
     form=  ClienteForm(instance=instancia)
-    # Compronbamos si se envió el formulario
     if request.method=="POST":
-        # Actualizamos el formulario con los datos del objeto
         form= ClienteForm(request.POST, instance=instancia)
-        # Si el formulario es valido....
         if form.is_valid():
-            #Guardamos el formulario pero sin confirmar aun
             instancia= form.save(commit=False)
-            # grabamos!!!
             instancia.save()
     return render(request, "app/editar_cliente.html",{'form':form})            
 
 def borrar_cliente(request, cliente_id):    
     instacia= Cliente.objects.get(id=cliente_id)
     instacia.delete()
-    return redirect('/')
+    return redirect('/listar_clientes')
 
 class Cliente_Create(CreateView):
     model = Cliente

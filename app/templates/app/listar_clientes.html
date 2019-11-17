@@ -15,6 +15,7 @@
 
     <h1>Lista de clientes</h1>
     <ul>
+        {% if clientes %}
         {% for c in clientes %}
         <br>
         <li>
@@ -44,6 +45,9 @@
             > Borrar</a>
         </li>
         {% endfor %}
+        {% else %}
+            <p>No hay clientes</p>
+        {% endif %}
     </ul>
 
 </body>
