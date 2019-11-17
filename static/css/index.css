@@ -1,5 +1,5 @@
 body{
-    background: rgb(230, 230, 110);
+	background: rgb(230, 230, 110);
 }
 .container{
 	display: flex;
@@ -12,7 +12,9 @@ body{
     flex: 1 100%;
 }
 .logo{
-	align-content: center;
+	display: flex;
+	float: center;
+	margin: auto;
 }
 
 .header {
@@ -21,10 +23,16 @@ body{
 }
 
 .navegacion {    
-    border-left-color: rgba(95, 223, 95, 0.774);
     float: left;
-    width: 30%,
+    width: 30%;
 
+}
+
+#carrusel {
+	display: flex;
+	float: center;
+	margin: auto;
+    width: 900px;
 }
 .lateral_izq {
     width: 50%;
@@ -43,10 +51,16 @@ body{
 }
 
 .footer {
-    display: left;
-    align-content: center;
-	background-color: #000;
+	text-align: center;
+    font-family: sans-serif;
+	color: whitesmoke;
+	background-color: royalblue;
+    width: 100%;
+    bottom: 0;
+    position:fixed;
 }
+
+#btn
 
 .social {
 	position: fixed;
@@ -118,14 +132,14 @@ body{
 	}
 }
 	
-	/* pantalla grandes */
-	@media screen and (max-width: 800px) {
-		.aside {
-		    width: 100%;
-			align-content: flex-start;
-		}
-		.aside-2{
-			margin: auto;
-			display: inline-flex;
-		}
+/* pantalla grandes */
+@media screen and (max-width: 800px) {
+	.aside {
+	    width: 100%;
+		align-content: flex-start;
 	}
+	.aside-2{
+		margin: auto;
+		display: inline-flex;
+	}
+}
